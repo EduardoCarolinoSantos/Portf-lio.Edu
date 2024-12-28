@@ -44,7 +44,7 @@ body {
     position: relative;
 }
 
-#menu li::after{
+#menu li::after {
     content: " ";
     width: 0%;
     height: 2px;
@@ -55,7 +55,7 @@ body {
     transition: 0.5s ease-in-out;
 }
 
-#menu li:hover::after{
+#menu li:hover::after {
     width: 100%;
 }
 
@@ -74,6 +74,10 @@ a {
     text-align: center;
     color: aliceblue;
     padding: 10px 25px 10px 25px;
+}
+
+#buttonCta:hover {
+    font-size: 17px;
 }
 
 #headerCta p {
@@ -105,6 +109,13 @@ a {
 
 .headerlogo {
     text-align: center;
+    margin-top: 10px;
+}
+
+.headerlogo :hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px white;
+    /* Sombra */
 }
 
 #clients {
@@ -185,7 +196,7 @@ h1.black {
     font-size: 16px;
     line-height: 24px;
     color: grey;
-    border: 0;
+    border: 2px black;
     width: 70%;
     padding: 15px 25px 15px 25px;
 }
@@ -205,16 +216,50 @@ h1.black {
     border: 0;
 }
 
+#contactForm button:hover {
+    font-size: 17px;
+}
+
 #porfólioTitle {
     padding: 50px;
     margin-top: 150px;
 }
 
 .portfolioImg {
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os itens "quebrem" para a linha de baixo*/
+    gap: 10px;
+    /* Espaçamento entre as imagens*/
+    justify-content: center;
+    /*Centraliza as imagens*/
+}
+
+.portfolioImg img {
+    max-width: 100%;
+    /* Garante que a imagem não utrapasse a largura do contêiner*/
+    height: auto;
+    /*Mantém a proporção da imagem*/
+    flex: 1 1 calc(33.333% - 20px);
+    /*Ajusta a largura para 3 imagens por linha*/
+}
+
+@media (max-width:768px) {
+    .portfolioImg img {
+        flex: 1 1 calc(50% - 20px);
+        /*Ajusta para 2 imagens por linha*/
+    }
+}
+
+@media (max-width:480px) {
+    .portfolioImg img {
+        flex: 1 1 100%;
+        /*Cada imagem ocupa 100% da largura, indo para uma linha nova*/
+    }
 }
 
 .portfolioImg {
     padding: 20px;
     border-radius: 20px;
+
 }
