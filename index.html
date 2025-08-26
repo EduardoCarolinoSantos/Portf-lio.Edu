@@ -1,126 +1,437 @@
 <!DOCTYPE html>
-<html lang="Pt-br">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="link rel=" preconnect href="https://fonts.googleapis.com">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link href="css/bootstrap-grid.min.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-    <title>Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="Img/portfolio.png" type="image/x-icon">
+    <title>Eduardo Carolino — Portfólio</title>
+    <meta name="description"
+        content="Dev focado em automação condominial, integrações, web e DevOps. Resultados em produtividade e previsibilidade." />
+    <link rel="icon" href="/img/flaticon.png" type="image/png" />
 
+    <!-- Devicon: ícones oficiais -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <!-- Font Awesome (WhatsApp, LinkedIn, etc) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- SEO/OG básico -->
+    <meta property="og:title" content="Eduardo Carolino — Portfólio" />
+    <meta property="og:description" content="Automação, integrações, web e DevOps para rotina condominial." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/img/Eduardo.svg.jpg" />
+    <meta name="theme-color" content="#0f1115" />
 </head>
 
 <body>
+    <!-- Navegação -->
     <header>
-        <div class="container"></div>
-        <div id="header">
-            Portfólio
-        </div>
-        <div id="menu">
-            <ul>
-                <li><a href="#services">Meus Serviços</a></li>
-                <li><a href="#contact">Contato</a></li>
-                <li><a href="#portfolioTitle">Portfólio</a></li>
-            </ul>
-        </div>
-        <div class="container">
-            <div id="headerCta">
-                <h1>Olá meu nome <br>
-                    é Eduardo
-                </h1>
-                <p>
-                    Sou um jovem apaixonado por tecnologia<br>
-                    gostaria de apresentar um pouco do meu conhecimento<br>
-                    atráves desse Portfólio
-                </p>
-                <a id="buttonCta" href="#services">Meus Serviços</a>
-            </div>
-            <div id="headerImg">
-                <img src="Img/Eduardo.svg.jpg" width="380px ">
-            </div>
-        </div>
-        <div class="container" id="clients">
-            <div id="headerClientText">
-                Alguns dos<br>meus Serviços
-            </div>
-            <a href="https://www.jaime.com.br/" target="_blank">
-                <div class="headerlogo"><img src="Img/LogoJaime.png" width="70"></div>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#about">Sobre</a>
+            <a href="#tech">Tecnologias</a>
+            <a href="#qualities">Qualidades</a>
+            <a href="#services">Serviços</a>
+            <a href="#cases">Cases</a>
+            <a href="#results">Resultados</a>
+            <a href="#portfolio">Portfólio</a>
+            <a href="#contact">Contato</a>
+            <!-- LinkedIn -->
+            <a class="social-link" href="https://www.linkedin.com/in/eduardo-carolino-santos-92819525b/" target="_blank"
+                rel="noopener noreferrer" title="Meu LinkedIn">
+                <i class="devicon-linkedin-plain"></i>
+                <span class="sr-only">LinkedIn</span>
             </a>
-            <a href="https://github.com/EduardoCarolinoSantos" target="_blank">
-                <div class="headerlogo"><img src="Img/github.png" width="50"></div>
+            <a class="social-link" href="https://wa.me/5511996627759?text=Ol%C3%A1%20Eduardo%2C%20vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar." target="_blank"
+                rel="noopener noreferrer" title="Meu WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span class="sr-only">WhatsApp</span>
             </a>
-            <a href="https://www.linkedin.com/in/eduardo-carolino-santos-92819525b/" target="_blank">
-                <div class="headerlogo"><img src="Img/linkedin.png" width="50"></div>
+            <a class="social-link" href="https://github.com/EduardoCarolinoSantos" target="_blank"
+                rel="noopener noreferrer" title="Meu GitHub">
+                <i class="devicon-github-original"></i>
+                <span class="sr-only">GitHub</span>
             </a>
-        </div>
-        <div class="container">
-            <div id="services">
-                <h2 class="red">Conheça</h2>
-                <h1 class="black">Meus Serviços</h1>
-            </div>
-        </div>
-        <div class="container" id="services">
-            <div class="textCenter">
-                <img src="Img/Serviços.png" width="50">
-                <h3>Suporte ao Cliente</h3>
-                <p>Te ajudo a organizar a sua empresa<br>
-                    e melhorar seus resultados.
-                </p>
-            </div>
-            <div class="textCenter">
-                <img src="Img/gmail.png" width="50">
-                <h3>E-mail Markenting</h3>
-                <p>Gerenciar campanhas é difícil.<br>
-                    Conte comigo para te ajudar.
-                </p>
-            </div>
-            <div class="textCenter">
-                <img src="Img/Internet.png" width="50">
-                <h3>Criação de Sites</h3>
-                <p> Desenvolvo o seu site inteiro<br>
-                    do 0 ao 100%.
-                </p>
-            </div>
-        </div>
-        <div class="container" id="contact">
-            <div id="contactImg">
-                <img src="Img/Trabalho.jpg">
-            </div>
-            <div id="contactForm">
-                <h2 class="red">Economize seu tempo.</h2>
-                <h1 class="black">Ganhe mais dinheiro</h1>
-                <p>Digite aqui seu endereço de e-mail. E eu entrarei em<br>
-                    contato para fornecer um diagnóstico gratuito.
-                </p>
-                <form action="https://formspree.io/f/xwpkppba" method="post" target="_blank"><br>
-                    <input placeholder="Seu e-mail" type="text" name="contactEmail" required="required">
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
-        </div>
-        <div class="container" id="portfolioTitle">
-            <div>
-                <h2 class="red">Conheça o meu</h2>
-                <h1 class="black">Portfólio</h1>
-            </div>
-        </div>
-        <div class="container">
-            <div class="portfolioImg"><img src="Img/programa1.jpg">
-            </div>
-            <div class="portfolioImg"><img src="Img/Programa2.jpg">
-            </div>
-            <div class="portfolioImg"><img src="Img/programa4.jpg">
-            </div>
-        </div>
+        </nav>
     </header>
+
+    <!-- Hero -->
+    <main id="home">
+        <section>
+            <h1>Eduardo C. Santos</h1>
+            <p>Transformo rotinas cansativas em produtividade com automação, integrações e engenharia de software de
+                ponta a ponta.</p>
+            <a href="#about">Conheça meu trabalho ↓</a>
+        </section>
+    </main>
+
+    <!-- SOBRE -->
+    <section id="about">
+        <h2>Sobre mim</h2>
+        <p class="section-lead">Automação, integrações e DevOps com foco em segurança, performance e previsibilidade.
+        </p>
+        <div class="about">
+            <div class="about__text">
+                <p>
+                    Sou desenvolvedor com foco em <strong>automação de processos</strong>, <strong>integrações
+                        SOAP/REST</strong> ,
+                    <strong>pipelines &amp; OCR</strong>, <strong>web apps</strong> e <strong>DevOps</strong>.
+                    Meu objetivo é levar operação segura, rápida e auditável para o seu dia a dia.
+                </p>
+                <ul class="about__bullets">
+                    <li>Arquiteturas enxutas e escaláveis.</li>
+                    <li>Documentação, handoff e treinamento.</li>
+                    <li>Monitoramento e observabilidade (sem adivinhação).</li>
+                    <li>Atendimento rápido.</li>
+                    <li>Integração entre sistemas legados e modernos.</li>
+                    <li>Automação ponta a ponta (sem intervenção manual).</li>
+                    <li>Segurança e conformidade de dados.</li>
+                    <li>Experiência do usuário no centro.</li>
+                    <li>Entrega ágil com qualidade comprovada.</li>
+                    <li>Suporte e evolução contínua.</li>
+                </ul>
+                <div class="about__cta">
+                    <a class="btn-primary" href="#contact">Fale comigo</a>
+                    <a class="btn-ghost" href="#services">Ver serviços</a>
+                </div>
+            </div>
+            <figure class="about__photo">
+                <img src="/img/Eduardo.svg.jpg" alt="Foto de Eduardo Carolino" loading="eager" />
+            </figure>
+        </div>
+    </section>
+
+    <!-- TECNOLOGIAS (todas com logo) -->
+    <section id="tech">
+        <h2>Tecnologias</h2>
+        <p class="section-lead">Stack do backend ao DevOps — com integrações reais em produção.</p>
+
+        <div class="tech-grid" role="list">
+            <!-- Linguagens / Backend -->
+            <div class="tech" role="listitem" title="Python"><i
+                    class="devicon-python-plain colored"></i><span>Python</span></div>
+            <div class="tech" role="listitem" title="PHP"><i class="devicon-php-plain colored"></i><span>PHP</span>
+            </div>
+            <div class="tech" role="listitem" title="JavaScript"><i
+                    class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+
+            <div class="tech" role="listitem" title="C Sharp"><i class="devicon-csharp-plain colored">
+
+                </i><span>C#</span></div>
+
+            <!-- Web -->
+            <div class="tech" role="listitem" title="HTML5"><i
+                    class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+            <div class="tech" role="listitem" title="CSS3"><i class="devicon-css3-plain colored"></i><span>CSS3</span>
+            </div>
+            <div class="tech" role="listitem" title="Bootstrap"><i
+                    class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+
+            <!-- REST (custom SVG) -->
+            <div class="tech" role="listitem" title="REST APIs">
+                <svg class="svg-icon" viewBox="0 0 64 64" aria-hidden="true">
+                    <rect x="6" y="12" width="52" height="40" rx="8" fill="url(#g1)" stroke="rgba(255,255,255,.25)" />
+                    <defs>
+                        <linearGradient id="g1" x1="0" x2="1">
+                            <stop offset="0" stop-color="#6c7bff" />
+                            <stop offset="1" stop-color="#22d3ee" />
+                        </linearGradient>
+                    </defs>
+                    <text x="50%" y="50%" text-anchor="middle" dy="6" font-size="18" fill="#06101a"
+                        font-weight="800">REST</text>
+                </svg>
+                <span>REST</span>
+            </div>
+
+            <!-- SOAP (custom SVG) -->
+            <div class="tech" role="listitem" title="SOAP (Ahreas)">
+                <svg class="svg-icon" viewBox="0 0 64 64" aria-hidden="true">
+                    <rect x="6" y="12" width="52" height="40" rx="8" fill="url(#g2)" stroke="rgba(255,255,255,.25)" />
+                    <defs>
+                        <linearGradient id="g2" x1="0" x2="1">
+                            <stop offset="0" stop-color="#22d3ee" />
+                            <stop offset="1" stop-color="#7c3aed" />
+                        </linearGradient>
+                    </defs>
+                    <text x="50%" y="50%" text-anchor="middle" dy="6" font-size="18" fill="#06101a"
+                        font-weight="800">SOAP</text>
+                </svg>
+                <span>SOAP</span>
+            </div>
+
+            <!-- Dados -->
+            <div class="tech" role="listitem" title="MySQL"><i
+                    class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+
+            <!-- DevOps -->
+            <div class="tech" role="listitem" title="Docker"><i
+                    class="devicon-docker-plain colored"></i><span>Docker</span></div>
+            <div class="tech" role="listitem" title="Jenkins (CI/CD)"><i
+                    class="devicon-jenkins-plain colored"></i><span>Jenkins</span></div>
+            <div class="tech" role="listitem" title="Linux"><i class="devicon-linux-plain"></i><span>Linux</span></div>
+            <div class="tech" role="listitem" title="Nginx"><i
+                    class="devicon-nginx-original colored"></i><span>Nginx</span></div>
+            <div class="tech" role="listitem" title="Zabbix">
+                <img class="logo-img" src="/img/zabbix.png" alt="Zabbix logo" loading="lazy" />
+                <span>Zabbix</span>
+            </div>
+            <div class="tech" role="listitem" title="Grafana"><i
+                    class="devicon-grafana-plain colored"></i><span>Grafana</span></div>
+
+            <!-- Cloud -->
+            <div class="tech" role="listitem" title="Amazon Web Services">
+                <i class="devicon-amazonwebservices-original colored"></i><span>AWS</span>
+            </div>
+
+            <!-- M365 -->
+            <div class="tech" role="listitem" title="Microsoft 365">
+                <img class="logo-img" src="/img/microsoft365.jpg" alt="Microsoft 365 logo" loading="lazy" />
+                <span>Microsoft 365</span>
+            </div>
+
+            <!-- Versionamento -->
+            <div class="tech" role="listitem" title="Git"><i class="devicon-git-plain colored"></i><span>Git</span>
+            </div>
+            <div class="tech" role="listitem" title="GitHub"><i class="devicon-github-original"></i><span>GitHub</span>
+            </div>
+
+            <!-- Extras sem Devicon (SVG custom) -->
+            <div class="tech" role="listitem" title="PHPMailer">
+                <svg class="svg-icon" viewBox="0 0 64 64" aria-hidden="true">
+                    <rect x="6" y="12" width="52" height="40" rx="8" fill="url(#g3)" stroke="rgba(255,255,255,.25)" />
+                    <defs>
+                        <linearGradient id="g3" x1="0" x2="1">
+                            <stop offset="0" stop-color="#6c7bff" />
+                            <stop offset="1" stop-color="#22d3ee" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M12 20h40v24H12z" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="2" />
+                    <path d="M12 20l20 16 20-16" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="2" />
+                    <text x="50%" y="54" text-anchor="middle" font-size="10" fill="#06101a" font-weight="800">PHP</text>
+                </svg>
+                <span>PHPMailer</span>
+            </div>
+
+            <div class="tech" role="listitem" title="QuickChart">
+                <svg class="svg-icon" viewBox="0 0 64 64" aria-hidden="true">
+                    <rect x="6" y="12" width="52" height="40" rx="8" fill="url(#g4)" stroke="rgba(255,255,255,.25)" />
+                    <defs>
+                        <linearGradient id="g4" x1="0" x2="1">
+                            <stop offset="0" stop-color="#22d3ee" />
+                            <stop offset="1" stop-color="#6c7bff" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="16" y="36" width="6" height="8" fill="#06101a" />
+                    <rect x="28" y="30" width="6" height="14" fill="#06101a" />
+                    <rect x="40" y="24" width="6" height="20" fill="#06101a" />
+                </svg>
+                <span>QuickChart</span>
+            </div>
+
+            <div class="tech" role="listitem" title="LLMs / Embeddings">
+                <svg class="svg-icon" viewBox="0 0 64 64" aria-hidden="true">
+                    <rect x="6" y="12" width="52" height="40" rx="8" fill="url(#g5)" stroke="rgba(255,255,255,.25)" />
+                    <defs>
+                        <linearGradient id="g5" x1="0" x2="1">
+                            <stop offset="0" stop-color="#7c3aed" />
+                            <stop offset="1" stop-color="#22d3ee" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="24" cy="32" r="8" fill="none" stroke="#06101a" stroke-width="3" />
+                    <circle cx="40" cy="32" r="8" fill="none" stroke="#06101a" stroke-width="3" />
+                    <path d="M16 32h32" stroke="#06101a" stroke-width="3" />
+                </svg>
+                <span>LLMs</span>
+            </div>
+
+            <div class="tech" role="listitem" title="OCR">
+                <svg class="svg-icon" viewBox="0 0 64 64" aria-hidden="true">
+                    <rect x="6" y="12" width="52" height="40" rx="8" fill="url(#g6)" stroke="rgba(255,255,255,.25)" />
+                    <defs>
+                        <linearGradient id="g6" x1="0" x2="1">
+                            <stop offset="0" stop-color="#6c7bff" />
+                            <stop offset="1" stop-color="#22d3ee" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="18" y="22" width="28" height="20" rx="2" fill="none" stroke="#06101a" stroke-width="2" />
+                    <text x="50%" y="39" text-anchor="middle" font-size="12" fill="#06101a" font-weight="800">OCR</text>
+                </svg>
+                <span>OCR</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUALIDADES -->
+    <section id="qualities">
+        <h2>Qualidades</h2>
+        <p class="section-lead">O que você pode esperar quando eu assumo um projeto.</p>
+        <div class="qualities">
+            <article class="quality">
+                <h3>Foco em resultado</h3>
+                <p>Entrego valor rápido e mensurável.</p>
+            </article>
+            <article class="quality">
+                <h3>Clean code &amp; padrão</h3>
+                <p>Código legível e testável.</p>
+            </article>
+            <article class="quality">
+                <h3>Documentação e handoff</h3>
+                <p>Playbooks e guias claros.</p>
+            </article>
+            <article class="quality">
+                <h3>Segurança operacional</h3>
+                <p>Logs, alertas e monitoramento.</p>
+            </article>
+            <article class="quality">
+                <h3>Experiência do usuário</h3>
+                <p>Interfaces rápidas e acessíveis.</p>
+            </article>
+            <article class="quality">
+                <h3>Parceria</h3>
+                <p>Comunicação direta e transparente.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="services">
+        <h2>Serviços</h2>
+        <div class="cards">
+            <article>
+                <h3>Automação &amp; Integrações</h3>
+                <p>Robôs, OCR, APIs (SOAP/REST).</p>
+            </article>
+            <article>
+                <h3>Web &amp; Portais</h3>
+                <p>Sites rápidos, acessíveis e conectados.</p>
+            </article>
+            <article>
+                <h3>DevOps &amp; Observabilidade</h3>
+                <p>CI/CD, Zabbix, Grafana e infra segura.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- CASES -->
+    <section id="cases">
+        <h2>Cases</h2>
+        <p class="section-lead">Projetos reais com ganho de produtividade e previsibilidade.</p>
+        <div class="cases">
+            <article class="case"><img src="/img/projeto2.png" alt="Consultas" loading="lazy">
+                <div class="case__body">
+                    <h3>Consultas</h3>
+                    <p>Feito para o comodismo dos clientes em terem tudo na palma das mãos.</p>
+                </div>
+            </article>
+            <article class="case"><img src="/img/projeto1.png" alt="Central de Dúvidas" loading="lazy">
+                <div class="case__body">
+                    <h3>Central de Dúvidas</h3>
+                    <p>Desenvolvido para assembleias virtuais, com chats individuais.</p>
+                </div>
+            </article>
+            <article class="case"><img src="/img/projeto3.png" alt="Calendário Institucional" loading="lazy">
+                <div class="case__body">
+                    <h3>Calendário Institucional</h3>
+                    <p>Calendário Institucional, programando avisos no: Outlook e Teams.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section id="results">
+        <h2>Resultados em números</h2>
+        <p class="section-lead">Impacto direto na operação condominial.</p>
+        <div class="metrics-grid">
+            <div class="metric">
+                <div class="metric__value" data-target="70" data-suffix="%">0</div>
+                <div class="metric__label">Tempo de conferência a menos</div>
+            </div>
+            <div class="metric">
+                <div class="metric__value" data-target="90" data-suffix="%">0</div>
+                <div class="metric__label">Redução de falhas de envio</div>
+            </div>
+            <div class="metric">
+                <div class="metric__value" data-target="10000" data-suffix="+">0</div>
+                <div class="metric__label">Páginas PDF processadas/mês</div>
+            </div>
+            <div class="metric">
+                <div class="metric__value" data-target="24" data-suffix="/7">0</div>
+                <div class="metric__label">Esteiras monitoradas</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="testimonials">
+        <h2>Depoimentos</h2>
+        <div class="testimonials">
+            <blockquote class="quote">
+                <p>“Automação robusta e documentação impecável.”</p>
+                <footer>— Síndicos Profissionais</footer>
+            </blockquote>
+            <blockquote class="quote">
+                <p>“Integrações entregues com qualidade e zero enrolação.”</p>
+                <footer>— Gerentes de Condomínio</footer>
+            </blockquote>
+            <blockquote class="quote">
+                <p>“Monitoramento ccasa.”</p>
+                <footer>— Gestor de TI</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+    <section id="portfolio">
+        <h2>Portfólio</h2>
+        <div class="gallery">
+            <a href="https://duvidas.jaime.com.br/" target="_blank" rel="noreferrer">
+                <img src="/img/projeto1.png" alt="Projeto 1" loading="lazy">
+            </a>
+            <a href="https://consultas.jaime.com.br/" target="_blank" rel="noreferrer">
+                <img src="/img/projeto2.png" alt="Projeto 2" loading="lazy">
+            </a>
+            <a href="https://calendario.jaime.com.br/" target="_blank" rel="noreferrer">
+                <img src="/img/projeto3.png" alt="Projeto 3" loading="lazy">
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contact">
+        <h2>Fale comigo</h2>
+        <form action="https://formspree.io/f/xwpkppba" method="post">
+            <input type="email" name="email" placeholder="Seu e-mail" required />
+            <button type="submit">Enviar por E-mail</button>
+        </form>
+
+        <div class="contact-social">
+            <a class="btn-ghost" href="https://www.linkedin.com/in/eduardo-carolino-santos/" target="_blank"
+                rel="noopener noreferrer">
+                <i class="devicon-linkedin-plain"></i> Conectar no LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <small>© <span id="year"></span> Eduardo Carolino. Todos os direitos reservados.</small>
+    </footer>
+
+    <!-- Botão flutuante WhatsApp -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/5511996627759?text=Ol%C3%A1%20Eduardo%2C%20vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar."
+            target="_blank" rel="noopener noreferrer" aria-label="Falar comigo no WhatsApp">
+            <img src="/img/whatsapp.png" alt="WhatsApp" />
+        </a>
+    </div>
+
+    <script src="./js/main.js" defer></script>
 </body>
 
 </html>
