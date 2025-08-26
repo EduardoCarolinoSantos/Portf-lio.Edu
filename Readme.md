@@ -34,3 +34,25 @@ Site pessoal focado em **automação**, **integrações (SOAP/REST)**, **web** e
 ├─ microsoft365.jpg
 ├─ whatsapp.png
 └─ (outros logos/imagens do portfólio)
+
+▶️ Como rodar localmente
+Opção 1 — Abrir direto
+
+Clique duas vezes em index.html (funciona, mas sem servidor local alguns recursos podem ser limitados).
+
+Opção 2 — Servidor simples (recomendado)
+
+Python 3
+
+# macOS / Linux
+python3 -m http.server 5173
+
+# Windows (PowerShell)
+py -m http.server 5173
+
+
+Acesse: http://localhost:5173
+
+Node (serve)
+
+npx serve .
