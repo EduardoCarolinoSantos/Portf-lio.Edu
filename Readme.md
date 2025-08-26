@@ -1,22 +1,23 @@
 # Portfólio — Eduardo Carolino
 
-Site pessoal focado em **automação**, **integrações (SOAP/REST)**, **web** e **DevOps**, com visual tech premium e CTA para contato direto por **WhatsApp** e **LinkedIn**.
+Site pessoal focado em **automação**, **integrações (SOAP/REST)**, **web** e **DevOps**, com visual **tech premium** e CTAs para contato direto via **WhatsApp** e **LinkedIn**.
 
-> **Demo local**: basta abrir `index.html` ou servir a pasta em um servidor estático (ver [Como rodar localmente](#como-rodar-localmente)).
+> **Demo local**: abra `index.html` no navegador ou sirva a pasta em um servidor estático ([ver instruções](#️-como-rodar-localmente)).
 
 ---
 
 ## ✨ Destaques
 
-- **Design profissional**: dark theme com gradientes, glassmorphism, grid sutil e microinterações.
-- **Seções completas**: Sobre, Tecnologias (com logos), Qualidades, Serviços, Cases, Resultados, Depoimentos, Portfólio e Contato.
-- **CTA sempre visível**: botão **WhatsApp flutuante** (canto inferior direito).
-- **Acessibilidade e SEO**: textos alternativos, OG tags, semântica básica e responsivo.
-- **Leve e sem build**: HTML, CSS e JS puros, prontos para qualquer hospedagem estática.
+- 🎨 **Design profissional**: dark theme, gradientes, glassmorphism, grid tecnológico e microinterações.
+- 📑 **Seções completas**: Sobre, Tecnologias (com logos), Qualidades, Serviços, Cases, Resultados, Depoimentos, Portfólio e Contato.
+- 📱 **Contato fácil**: botão **WhatsApp flutuante** fixo no canto inferior direito + LinkedIn.
+- 🌐 **SEO & Acessibilidade**: OG tags, responsivo, semântica básica e textos alternativos.
+- ⚡ **Leve e estático**: HTML, CSS e JS puros, sem dependência de frameworks ou builds.
 
 ---
 
 ## 🗂 Estrutura de pastas
+
 /
 ├─ index.html
 ├─ README.md
@@ -35,24 +36,52 @@ Site pessoal focado em **automação**, **integrações (SOAP/REST)**, **web** e
 ├─ whatsapp.png
 └─ (outros logos/imagens do portfólio)
 
-▶️ Como rodar localmente
-Opção 1 — Abrir direto
+yaml
+Copiar
+Editar
 
-Clique duas vezes em index.html (funciona, mas sem servidor local alguns recursos podem ser limitados).
+---
 
-Opção 2 — Servidor simples (recomendado)
+## ▶️ Como rodar localmente
 
-Python 3
+### Opção 1 — Abrir direto
+Clique duas vezes em `index.html`.  
+Funciona, mas sem servidor local alguns recursos podem ser limitados.
 
+### Opção 2 — Servidor simples (recomendado)
+
+**Python 3**
+```bash
 # macOS / Linux
 python3 -m http.server 5173
 
 # Windows (PowerShell)
 py -m http.server 5173
+➡ Acesse: http://localhost:5173
 
+Node.js (serve)
 
-Acesse: http://localhost:5173
-
-Node (serve)
-
+bash
+Copiar
+Editar
 npx serve .
+🔒 Licenças & Créditos
+Devicon (ícones de tecnologias): MIT License — https://github.com/devicons/devicon
+
+Logos de terceiros (Zabbix, Microsoft 365, etc.): marcas pertencem aos respectivos proprietários.
+
+Font Awesome (se ativado): conforme licença da versão utilizada.
+
+Fotos e conteúdos: © Eduardo Carolino.
+
+🛠 Manutenção
+✅ O ano no rodapé é atualizado automaticamente via js/main.js.
+
+✅ Animação dos counters (Resultados) dispara ao entrar na viewport (IntersectionObserver).
+
+✅ O botão WhatsApp flutuante permanece sempre visível (.whatsapp-float).
+
+📬 Contato
+WhatsApp: botão flutuante no site (wa.me).
+
+LinkedIn: Eduardo Carolino Santos
