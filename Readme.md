@@ -84,4 +84,4 @@ Fotos e conteúdos: © Eduardo Carolino.
 📬 Contato
 WhatsApp: botão flutuante no site (wa.me).
 
-LinkedIn: Eduardo Carolino Santos
+LinkedIn: www.linkedin.com/in/eduardo-carolino-santos
