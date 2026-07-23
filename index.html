@@ -5,135 +5,268 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Eduardo Carolino — Portfólio</title>
+    <!-- Aplica o tema salvo antes do render (evita flash) + sempre inicia no topo -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+            } catch (e) { }
+            try {
+                // Não restaura a rolagem anterior e ignora o #hash ao (re)carregar
+                if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+                if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+            } catch (e) { }
+        })();
+    </script>
+
+    <title>Eduardo C. Santos — Engenheiro de Software</title>
     <meta name="description"
-        content="Dev focado em automação condominial, integrações, web e DevOps. Resultados em produtividade e previsibilidade." />
-    <link rel="icon" href="/img/flaticon.png" type="image/png" />
+        content="Engenheiro de Software especialista em Java e Spring Boot. APIs REST, microsserviços e integrações escaláveis, seguras e testáveis." />
+    <!-- Favicon SVG (marca) -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%236c7bff'/><text x='32' y='45' font-family='monospace' font-size='30' font-weight='bold' text-anchor='middle' fill='%2306101a'>&lt;/&gt;</text></svg>"
+        type="image/svg+xml" />
 
-    <!-- Devicon: ícones oficiais -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
-    <!-- Font Awesome (WhatsApp, LinkedIn, etc) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <!-- Devicon: ícones oficiais (único CDN necessário) -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
 
     <!-- Estilos -->
     <link rel="stylesheet" href="./css/style.css" />
 
-    <!-- SEO/OG básico -->
-    <meta property="og:title" content="Eduardo Carolino — Portfólio" />
-    <meta property="og:description" content="Automação, integrações, web e DevOps para rotina condominial." />
+    <!-- SEO / Open Graph -->
+    <meta property="og:title" content="Eduardo C. Santos — Engenheiro de Software" />
+    <meta property="og:description" content="Especialista em Java e Spring Boot: APIs REST, microsserviços e integrações prontas para produção." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/img/Eduardo.svg.jpg" />
-    <meta name="theme-color" content="#0f1115" />
+    <meta property="og:image:alt" content="Eduardo C. Santos — Engenheiro de Software" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Eduardo C. Santos — Engenheiro de Software" />
+    <meta name="twitter:description" content="Especialista em Java e Spring Boot: APIs REST, microsserviços e integrações." />
+    <meta name="twitter:image" content="/img/Eduardo.svg.jpg" />
+    <meta name="author" content="Eduardo C. Santos" />
+    <meta name="theme-color" content="#0a0d13" />
+
+    <!-- Dados estruturados (SEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Eduardo C. Santos",
+        "jobTitle": "Engenheiro de Software",
+        "description": "Engenheiro de Software especialista em Java e Spring Boot: APIs REST, microsserviços e integrações.",
+        "knowsAbout": ["Java", "Spring Boot", "Spring", "Hibernate", "JPA", "REST", "Microsserviços", "Docker", "Kubernetes", "PostgreSQL", "MySQL", "CI/CD"],
+        "sameAs": [
+            "https://www.linkedin.com/in/eduardo-carolino-santos/",
+            "https://github.com/EduardoCarolinoSantos"
+        ]
+    }
+    </script>
 </head>
 
 <body>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    <a class="skip-link" href="#home" data-i18n="skip">Pular para o conteúdo</a>
+
     <!-- Navegação -->
     <header>
         <nav>
-            <a href="#home">Início</a>
-            <a href="#about">Sobre</a>
-            <a href="#tech">Tecnologias</a>
-            <a href="#qualities">Qualidades</a>
-            <a href="#services">Serviços</a>
-            <a href="#cases">Cases</a>
-            <a href="#results">Resultados</a>
-            <a href="#portfolio">Portfólio</a>
-            <a href="#contact">Contato</a>
-            <!-- LinkedIn -->
-            <a class="social-link" href="https://www.linkedin.com/in/eduardo-carolino-santos/" target="_blank"
-                rel="noopener noreferrer" title="Meu LinkedIn">
-                <i class="devicon-linkedin-plain"></i>
-                <span class="sr-only">LinkedIn</span>
+            <a class="brand" href="#home">
+                <span class="brand__mark">&lt;/&gt;</span>
+                <span class="brand__name">Eduardo C. Santos<small>Software Engineer</small></span>
             </a>
-            <a class="social-link"
-                href="https://wa.me/5511996627759?text=Ol%C3%A1%20Eduardo%2C%20vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar."
-                target="_blank" rel="noopener noreferrer" title="Meu WhatsApp">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span class="sr-only">WhatsApp</span>
-            </a>
-            <a class="social-link" href="https://github.com/EduardoCarolinoSantos" target="_blank"
-                rel="noopener noreferrer" title="Meu GitHub">
-                <i class="devicon-github-original"></i>
-                <span class="sr-only">GitHub</span>
-            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="#api" data-i18n="nav.api">API</a>
+                <a href="#about" data-i18n="nav.about">Sobre</a>
+                <a href="#tech" data-i18n="nav.tech">Tecnologias</a>
+                <a href="#architecture" data-i18n="nav.arch">Arquitetura</a>
+                <a href="#portfolio" data-i18n="nav.portfolio">Portfólio</a>
+                <a href="#contact" data-i18n="nav.contact">Contato</a>
+
+                <div class="nav-social">
+                    <a class="social-link social-link--linkedin"
+                        href="https://www.linkedin.com/in/eduardo-carolino-santos/" target="_blank"
+                        rel="noopener noreferrer" title="Meu LinkedIn">
+                        <i class="devicon-linkedin-plain"></i>
+                        <span class="sr-only">LinkedIn</span>
+                    </a>
+                    <a class="social-link social-link--whatsapp"
+                        href="https://wa.me/5511996627759?text=Ol%C3%A1%2C%20Eduardo%21%20Vi%20seu%20portf%C3%B3lio%20de%20Engenheiro%20de%20Software%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade."
+                        target="_blank" rel="noopener noreferrer" title="Meu WhatsApp">
+                        <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20"
+                            height="20">
+                            <path
+                                d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                        </svg>
+                        <span class="sr-only">WhatsApp</span>
+                    </a>
+                    <a class="social-link social-link--github" href="https://github.com/EduardoCarolinoSantos"
+                        target="_blank" rel="noopener noreferrer" title="Meu GitHub">
+                        <i class="devicon-github-plain"></i>
+                        <span class="sr-only">GitHub</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <div class="lang-switch" role="group" aria-label="Idioma / Language">
+                    <button type="button" class="lang-btn is-active" data-lang="pt">PT</button>
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="theme-toggle" type="button" aria-label="Alternar tema claro/escuro"
+                    title="Alternar tema">
+                    <svg class="ico-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4" />
+                    </svg>
+                    <svg class="ico-moon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"
+                        aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                    </svg>
+                </button>
+                <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </nav>
     </header>
 
     <!-- Hero -->
     <main id="home">
-        <section>
-            <h1>Eduardo C. Santos</h1>
-            <p>Transformo rotinas cansativas em produtividade com automação, integrações e engenharia de software de
-                ponta a ponta.</p>
-            <a href="#about">Conheça meu trabalho ↓</a>
+        <section class="hero">
+            <div class="hero__text">
+                <p class="hero-status"><span class="dot-live" aria-hidden="true"></span><span
+                        data-i18n="hero.status">Disponível para novos projetos</span></p>
+                <p class="hero-role" data-i18n="hero.role">Engenheiro de Software · Especialista em Java &amp; Spring
+                    Boot</p>
+                <h1>Eduardo C. Santos</h1>
+                <p class="hero__sub" data-i18n-html="hero.sub">Construo APIs REST, microsserviços e integrações com
+                    <strong>Java</strong> e <strong>Spring Boot</strong> — código limpo, testável e pronto para
+                    produção.</p>
+                <div class="hero__cta">
+                    <a class="btn-primary" href="#portfolio" data-i18n="hero.cta1">Ver projetos</a>
+                    <a class="btn-ghost" id="cv-link" href="/cv/curriculo_eduardo_carolino_santos_pt.pdf" download
+                        data-i18n="hero.cv">Baixar CV</a>
+                    <a class="btn-ghost" href="#contact" data-i18n="hero.cta2">Fale comigo</a>
+                </div>
+                <p class="hero-loc"><span aria-hidden="true">📍</span> <span data-i18n="hero.loc">Brasil · Remoto</span>
+                </p>
+                <ul class="hero__stats" aria-label="Destaques">
+                    <li><strong>Java</strong><span data-i18n="hero.stat1">Especialidade</span></li>
+                    <li><strong>Spring Boot</strong><span data-i18n="hero.stat2">Framework</span></li>
+                    <li><strong>REST</strong><span data-i18n="hero.stat3">APIs &amp; Microsserviços</span></li>
+                </ul>
+            </div>
+
+            <div class="hero__code" aria-hidden="true">
+                <div class="code-card">
+                    <div class="code-card__bar">
+                        <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+                        <span class="code-card__file" id="type-file">DevController.java</span>
+                    </div>
+                    <pre class="code-card__body"><code id="type-code"></code></pre>
+                </div>
+            </div>
         </section>
     </main>
 
+    <!-- API EXPLORER (conceito: o portfólio como uma API REST) -->
+    <section id="api">
+        <h2 data-i18n="api.title">Meu perfil, como uma API REST</h2>
+        <p class="section-lead" data-i18n="api.lead">Sou especialista em REST — explore meus dados como você faria com
+            qualquer endpoint. Clique e veja a resposta.</p>
+
+        <div class="api-console">
+            <div class="api-console__endpoints" role="tablist" aria-label="Endpoints">
+                <button class="api-ep is-active" data-ep="perfil" role="tab"><span class="api-verb">GET</span>
+                    /perfil</button>
+                <button class="api-ep" data-ep="skills" role="tab"><span class="api-verb">GET</span> /skills</button>
+                <button class="api-ep" data-ep="projetos" role="tab"><span class="api-verb">GET</span>
+                    /projetos</button>
+                <button class="api-ep" data-ep="contato" role="tab"><span class="api-verb">GET</span> /contato</button>
+            </div>
+
+            <div class="api-console__panel">
+                <div class="api-console__bar">
+                    <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+                    <span class="api-req"><span class="api-req__method">GET</span> <span class="api-req__url"
+                            id="api-url">/api/v1/perfil</span></span>
+                    <span class="api-status is-ok" id="api-status">200 OK</span>
+                </div>
+                <pre class="api-console__body"><code id="api-response"></code></pre>
+            </div>
+        </div>
+    </section>
+
     <!-- SOBRE -->
     <section id="about">
-        <h2>Sobre mim</h2>
-        <p class="section-lead">Automação, integrações e DevOps com foco em segurança, performance e previsibilidade.
+        <h2 data-i18n="about.title">Sobre mim</h2>
+        <p class="section-lead" data-i18n="about.lead">Backend em Java e Spring Boot, com foco em segurança, performance
+            e código sustentável.
         </p>
         <div class="about">
             <div class="about__text">
-                <p>
-                    Sou desenvolvedor com foco em <strong>automação de processos</strong>, <strong>integrações
-                        SOAP/REST</strong> ,
-                    <strong>pipelines &amp; OCR</strong>, <strong>web apps</strong> e <strong>DevOps</strong>.
-                    Meu objetivo é levar operação segura, rápida e auditável para o seu dia a dia.
+                <p data-i18n-html="about.p">
+                    Sou <strong>Engenheiro de Software</strong> especializado em <strong>Java</strong> e no ecossistema
+                    <strong>Spring</strong>. Projeto e construo <strong>APIs REST</strong>, <strong>microsserviços</strong>
+                    e <strong>integrações</strong> entre sistemas legados e modernos — sempre com testes automatizados,
+                    boas práticas e deploy contínuo.
                 </p>
                 <ul class="about__bullets">
-                    <li>Arquiteturas enxutas e escaláveis.</li>
-                    <li>Documentação, handoff e treinamento.</li>
-                    <li>Monitoramento e observabilidade (sem adivinhação).</li>
-                    <li>Atendimento rápido.</li>
-                    <li>Integração entre sistemas legados e modernos.</li>
-                    <li>Automação ponta a ponta (sem intervenção manual).</li>
-                    <li>Segurança e conformidade de dados.</li>
-                    <li>Experiência do usuário no centro.</li>
-                    <li>Entrega ágil com qualidade comprovada.</li>
-                    <li>Suporte e evolução contínua.</li>
+                    <li data-i18n="about.b1">APIs REST e integrações SOAP/REST com Spring Boot.</li>
+                    <li data-i18n="about.b2">Arquitetura de microsserviços escaláveis.</li>
+                    <li data-i18n="about.b3">Persistência com JPA/Hibernate e SQL.</li>
+                    <li data-i18n="about.b4">Testes automatizados (JUnit e Mockito).</li>
+                    <li data-i18n="about.b5">Clean Code, SOLID e padrões de projeto.</li>
+                    <li data-i18n="about.b6">CI/CD, Docker e deploy em nuvem (AWS).</li>
+                    <li data-i18n="about.b7">Observabilidade e logs estruturados.</li>
+                    <li data-i18n="about.b8">Integração entre sistemas legados e modernos.</li>
+                    <li data-i18n="about.b9">Documentação e handoff claros.</li>
+                    <li data-i18n="about.b10">Evolução contínua com qualidade comprovada.</li>
                 </ul>
                 <div class="about__cta">
-                    <a class="btn-primary" href="#contact">Fale comigo</a>
-                    <a class="btn-ghost" href="#services">Ver serviços</a>
+                    <a class="btn-primary" href="#contact" data-i18n="about.cta1">Fale comigo</a>
+                    <a class="btn-ghost" href="#services" data-i18n="about.cta2">Ver serviços</a>
                 </div>
             </div>
             <figure class="about__photo">
-                <img src="/img/Eduardo.svg.jpg" alt="Foto de Eduardo Carolino" loading="eager" />
+                <img src="/img/Eduardo.svg.jpg" alt="Foto de Eduardo C. Santos" loading="eager" />
             </figure>
         </div>
     </section>
 
-    <!-- TECNOLOGIAS (todas com logo) -->
+    <!-- TECNOLOGIAS (foco no ecossistema Java) -->
     <section id="tech">
-        <h2>Tecnologias</h2>
-        <p class="section-lead">Tecnologias que utilizo atualmente.</p>
+        <h2 data-i18n="tech.title">Tecnologias</h2>
+        <p class="section-lead" data-i18n="tech.lead">Meu foco é o ecossistema Java, apoiado pela infraestrutura de um
+            backend moderno.</p>
 
+        <!-- Núcleo Java -->
+        <h3 class="tech-group-title" data-i18n="tech.g1">Core Java &amp; Spring</h3>
         <div class="tech-grid" role="list">
-
-            <!-- Linguagens / Backend -->
-             
-            <div class="tech" role="listitem" title="Python"><i
-                    class="devicon-python-plain colored"></i><span>Python</span></div>
-            <div class="tech" role="listitem" title="Django"><i
-                    class="devicon-django-plain colored"></i><span>Django</span>
-            </div>
-            <div class="tech" role="listitem" title="Java"><i class="devicon-java-plain colored">
-                </i><span>Java</span></div>
+            <div class="tech" role="listitem" title="Java"><i
+                    class="devicon-java-plain colored"></i><span>Java</span></div>
             <div class="tech" role="listitem" title="Spring"><i
                     class="devicon-spring-plain colored"></i><span>Spring</span></div>
+            <div class="tech" role="listitem" title="Spring Boot"><i
+                    class="devicon-spring-plain colored"></i><span>Spring Boot</span></div>
+            <div class="tech" role="listitem" title="Hibernate / JPA"><i
+                    class="devicon-hibernate-plain colored"></i><span>Hibernate / JPA</span></div>
+            <div class="tech" role="listitem" title="Maven"><i
+                    class="devicon-maven-plain colored"></i><span>Maven</span></div>
+            <div class="tech" role="listitem" title="Gradle"><i
+                    class="devicon-gradle-plain colored"></i><span>Gradle</span></div>
+            <div class="tech" role="listitem" title="JUnit"><i
+                    class="devicon-junit-plain colored"></i><span>JUnit</span></div>
+        </div>
 
-
-            <!-- Web -->
-            <div class="tech" role="listitem" title="HTML5"><i
-                    class="devicon-html5-plain colored"></i><span>HTML5</span></div>
-            <div class="tech" role="listitem" title="CSS3"><i class="devicon-css3-plain colored"></i><span>CSS3</span>
-            </div>
-            <div class="tech" role="listitem" title="Bootstrap"><i
-                    class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+        <!-- APIs, dados e infraestrutura -->
+        <h3 class="tech-group-title" data-i18n="tech.g2">APIs, Dados &amp; Infraestrutura</h3>
+        <div class="tech-grid" role="list">
 
             <!-- REST (custom SVG) -->
             <div class="tech" role="listitem" title="REST APIs">
@@ -167,273 +300,248 @@
                 <span>SOAP</span>
             </div>
 
-            <!-- Dados -->
+            <!-- Bancos de dados -->
             <div class="tech" role="listitem" title="MySQL"><i
                     class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
-            <!-- DevOps -->
+            <div class="tech" role="listitem" title="PostgreSQL"><i
+                    class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+
+            <!-- Containers & Orquestração -->
             <div class="tech" role="listitem" title="Docker"><i
                     class="devicon-docker-plain colored"></i><span>Docker</span></div>
+            <div class="tech" role="listitem" title="Kubernetes"><i
+                    class="devicon-kubernetes-plain colored"></i><span>Kubernetes</span></div>
+            <div class="tech" role="listitem" title="Argo CD (GitOps)"><i
+                    class="devicon-argocd-plain colored"></i><span>Argo CD</span></div>
 
+            <!-- CI/CD & Qualidade -->
             <div class="tech" role="listitem" title="Jenkins (CI/CD)"><i
                     class="devicon-jenkins-plain colored"></i><span>Jenkins</span></div>
-            <div class="tech" role="listitem" title="Linux"><i class="devicon-linux-plain"></i><span>Linux</span></div>
-            <div class="tech" role="listitem" title="Nginx"><i
-                    class="devicon-nginx-original colored"></i><span>Nginx</span></div>
+            <div class="tech" role="listitem" title="GitHub Actions"><i
+                    class="devicon-githubactions-plain colored"></i><span>GitHub Actions</span></div>
+            <div class="tech" role="listitem" title="SonarQube"><i
+                    class="devicon-sonarqube-plain colored"></i><span>SonarQube</span></div>
 
-            <!-- Cloud -->
+            <!-- Nuvem & IaC -->
             <div class="tech" role="listitem" title="Amazon Web Services">
-                <i class="devicon-amazonwebservices-original colored"></i><span>AWS</span>
+                <i class="devicon-amazonwebservices-plain colored"></i><span>AWS</span>
             </div>
-
-            <!-- Kubernets/Orquestração Containers -->
-            <div class="tech" role="listitem" title="Kubernets"><i class="devicon-k3s-plain"></i><span>Kubernets</span>
-            </div>
-
-            <!-- Sistemas para monitoramento da Infra -->
-
-            <div class="tech" role="listitem" title="Zabbix">
-                <img class="logo-img" src="/img/zabbix.png" alt="Zabbix logo" loading="lazy" />
-                <span>Zabbix</span>
-            </div>
-            <div class="tech" role="listitem" title="Grafana"><i
-                    class="devicon-grafana-plain colored"></i><span>Grafana</span></div>
-
+            <div class="tech" role="listitem" title="Microsoft Azure"><i
+                    class="devicon-azure-plain colored"></i><span>Azure</span></div>
+            <div class="tech" role="listitem" title="Terraform (IaC)"><i
+                    class="devicon-terraform-plain colored"></i><span>Terraform</span></div>
+            <div class="tech" role="listitem" title="Linux"><i class="devicon-linux-plain"></i><span>Linux</span></div>
 
             <!-- Versionamento -->
-
             <div class="tech" role="listitem" title="Git"><i class="devicon-git-plain colored"></i><span>Git</span>
             </div>
-            <div class="tech" role="listitem" title="GitHub"><i class="devicon-github-original"></i><span>GitHub</span>
+            <div class="tech" role="listitem" title="GitHub"><i class="devicon-github-plain"></i><span>GitHub</span>
             </div>
+        </div>
+    </section>
 
-            <!-- Extras sem Devicon (SVG custom) -->
-            <div class="tech" role="listitem" title="PHPMailer">
-                <svg class="svg-icon" viewBox="0 0 64 64" aria-hidden="true">
-                    <rect x="6" y="12" width="52" height="40" rx="8" fill="url(#g3)" stroke="rgba(255,255,255,.25)" />
-                    <defs>
-                        <linearGradient id="g3" x1="0" x2="1">
-                            <stop offset="0" stop-color="#6c7bff" />
-                            <stop offset="1" stop-color="#22d3ee" />
-                        </linearGradient>
-                    </defs>
-                    <path d="M12 20h40v24H12z" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="2" />
-                    <path d="M12 20l20 16 20-16" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="2" />
-                    <text x="50%" y="54" text-anchor="middle" font-size="10" fill="#06101a" font-weight="800">PHP</text>
-                </svg>
-                <span>PHPMailer</span>
+    <!-- ARQUITETURA -->
+    <section id="architecture">
+        <h2 data-i18n="arch.title">Arquitetura & como eu trabalho</h2>
+        <p class="section-lead" data-i18n="arch.lead">Como estruturo um backend Spring Boot pronto para produção — em
+            camadas, testável e observável.</p>
+        <div class="arch">
+            <div class="arch__flow">
+                <div class="arch-node">
+                    <strong data-i18n="arch.n1">Cliente / Front-end</strong>
+                    <span data-i18n="arch.n1s">Web · Mobile · Integrações</span>
+                </div>
+                <div class="arch-arrow"><span>HTTPS / REST</span></div>
+                <div class="arch-node">
+                    <strong data-i18n="arch.n2">API Layer</strong>
+                    <span data-i18n="arch.n2s">Controllers · DTOs · Validação</span>
+                </div>
+                <div class="arch-arrow"></div>
+                <div class="arch-node">
+                    <strong data-i18n="arch.n3">Service Layer</strong>
+                    <span data-i18n="arch.n3s">Regras de negócio · Transações</span>
+                </div>
+                <div class="arch-arrow"></div>
+                <div class="arch-node">
+                    <strong data-i18n="arch.n4">Repository Layer</strong>
+                    <span data-i18n="arch.n4s">Spring Data JPA · Hibernate</span>
+                </div>
+                <div class="arch-arrow"></div>
+                <div class="arch-node arch-node--db">
+                    <strong data-i18n="arch.n5">Banco de Dados</strong>
+                    <span data-i18n="arch.n5s">PostgreSQL · MySQL</span>
+                </div>
             </div>
-
-            <div class="tech" role="listitem" title="QuickChart">
-                <svg class="svg-icon" viewBox="0 0 64 64" aria-hidden="true">
-                    <rect x="6" y="12" width="52" height="40" rx="8" fill="url(#g4)" stroke="rgba(255,255,255,.25)" />
-                    <defs>
-                        <linearGradient id="g4" x1="0" x2="1">
-                            <stop offset="0" stop-color="#22d3ee" />
-                            <stop offset="1" stop-color="#6c7bff" />
-                        </linearGradient>
-                    </defs>
-                    <rect x="16" y="36" width="6" height="8" fill="#06101a" />
-                    <rect x="28" y="30" width="6" height="14" fill="#06101a" />
-                    <rect x="40" y="24" width="6" height="20" fill="#06101a" />
-                </svg>
-                <span>QuickChart</span>
-            </div>
-
-            <div class="tech" role="listitem" title="LLMs / Embeddings">
-                <svg class="svg-icon" viewBox="0 0 64 64" aria-hidden="true">
-                    <rect x="6" y="12" width="52" height="40" rx="8" fill="url(#g5)" stroke="rgba(255,255,255,.25)" />
-                    <defs>
-                        <linearGradient id="g5" x1="0" x2="1">
-                            <stop offset="0" stop-color="#7c3aed" />
-                            <stop offset="1" stop-color="#22d3ee" />
-                        </linearGradient>
-                    </defs>
-                    <circle cx="24" cy="32" r="8" fill="none" stroke="#06101a" stroke-width="3" />
-                    <circle cx="40" cy="32" r="8" fill="none" stroke="#06101a" stroke-width="3" />
-                    <path d="M16 32h32" stroke="#06101a" stroke-width="3" />
-                </svg>
-                <span>LLMs</span>
-            </div>
-
-            <div class="tech" role="listitem" title="OCR">
-                <svg class="svg-icon" viewBox="0 0 64 64" aria-hidden="true">
-                    <rect x="6" y="12" width="52" height="40" rx="8" fill="url(#g6)" stroke="rgba(255,255,255,.25)" />
-                    <defs>
-                        <linearGradient id="g6" x1="0" x2="1">
-                            <stop offset="0" stop-color="#6c7bff" />
-                            <stop offset="1" stop-color="#22d3ee" />
-                        </linearGradient>
-                    </defs>
-                    <rect x="18" y="22" width="28" height="20" rx="2" fill="none" stroke="#06101a" stroke-width="2" />
-                    <text x="50%" y="39" text-anchor="middle" font-size="12" fill="#06101a" font-weight="800">OCR</text>
-                </svg>
-                <span>OCR</span>
-            </div>
+            <aside class="arch__cross">
+                <h3 data-i18n="arch.cross">Camadas transversais</h3>
+                <ul>
+                    <li><span class="arch__ico">🔐</span><span data-i18n="arch.c1">Segurança — Spring Security +
+                            JWT</span></li>
+                    <li><span class="arch__ico">✅</span><span data-i18n="arch.c2">Testes — JUnit + Mockito</span></li>
+                    <li><span class="arch__ico">📦</span><span data-i18n="arch.c3">Empacotamento — Docker</span></li>
+                    <li><span class="arch__ico">🔁</span><span data-i18n="arch.c4">CI/CD — Jenkins · GitHub
+                            Actions</span></li>
+                    <li><span class="arch__ico">📊</span><span data-i18n="arch.c5">Observabilidade — logs &
+                            métricas</span></li>
+                </ul>
+            </aside>
         </div>
     </section>
 
     <!-- QUALIDADES -->
     <section id="qualities">
-        <h2>Qualidades</h2>
-        <p class="section-lead">O que você pode esperar quando eu assumo um projeto.</p>
+        <h2 data-i18n="qual.title">Qualidades</h2>
+        <p class="section-lead" data-i18n="qual.lead">O que você pode esperar quando eu assumo um projeto.</p>
         <div class="qualities">
             <article class="quality">
-                <h3>Foco em resultado</h3>
-                <p>Entrego valor rápido e mensurável.</p>
+                <h3 data-i18n="qual.h1">Foco em resultado</h3>
+                <p data-i18n="qual.p1">Entrego valor rápido e mensurável.</p>
             </article>
             <article class="quality">
-                <h3>Clean code &amp; padrão</h3>
-                <p>Código legível e testável.</p>
+                <h3 data-i18n="qual.h2">Clean code &amp; padrão</h3>
+                <p data-i18n="qual.p2">Código legível e testável.</p>
             </article>
             <article class="quality">
-                <h3>Documentação e handoff</h3>
-                <p>Playbooks e guias claros.</p>
+                <h3 data-i18n="qual.h3">Documentação e handoff</h3>
+                <p data-i18n="qual.p3">Playbooks e guias claros.</p>
             </article>
             <article class="quality">
-                <h3>Segurança operacional</h3>
-                <p>Logs, alertas e monitoramento.</p>
+                <h3 data-i18n="qual.h4">Segurança operacional</h3>
+                <p data-i18n="qual.p4">Logs, alertas e monitoramento.</p>
             </article>
             <article class="quality">
-                <h3>Experiência do usuário</h3>
-                <p>Interfaces rápidas e acessíveis.</p>
+                <h3 data-i18n="qual.h5">Experiência do usuário</h3>
+                <p data-i18n="qual.p5">Interfaces rápidas e acessíveis.</p>
             </article>
             <article class="quality">
-                <h3>Parceria</h3>
-                <p>Comunicação direta e transparente.</p>
+                <h3 data-i18n="qual.h6">Parceria</h3>
+                <p data-i18n="qual.p6">Comunicação direta e transparente.</p>
             </article>
         </div>
     </section>
 
     <!-- SERVIÇOS -->
     <section id="services">
-        <h2>Serviços</h2>
+        <h2 data-i18n="serv.title">Serviços</h2>
         <div class="cards">
             <article>
-                <h3>Automação &amp; Integrações</h3>
-                <p>Robôs, OCR, APIs (SOAP/REST).</p>
+                <h3 data-i18n="serv.h1">APIs &amp; Microsserviços</h3>
+                <p data-i18n="serv.p1">APIs REST robustas e microsserviços com Spring Boot.</p>
             </article>
             <article>
-                <h3>Web &amp; Portais</h3>
-                <p>Sites rápidos, acessíveis e conectados.</p>
+                <h3 data-i18n="serv.h2">Integrações de Sistemas</h3>
+                <p data-i18n="serv.p2">Integrações SOAP/REST entre sistemas legados e modernos.</p>
             </article>
             <article>
-                <h3>DevOps &amp; Observabilidade</h3>
-                <p>CI/CD, Zabbix, Grafana e infra segura.</p>
+                <h3 data-i18n="serv.h3">Backend Escalável &amp; CI/CD</h3>
+                <p data-i18n="serv.p3">Docker, Kubernetes, pipelines e deploy seguro em nuvem.</p>
             </article>
-        </div>
-    </section>
-
-    <!-- CASES -->
-    <section id="cases">
-        <h2>Cases</h2>
-        <p class="section-lead">Projetos reais com ganho de produtividade e previsibilidade.</p>
-        <div class="cases">
-            <article class="case"><img src="/img/projeto2.png" alt="Consultas" loading="lazy">
-                <div class="case__body">
-                    <h3>Consultas</h3>
-                    <p>Feito para o comodismo dos clientes em terem tudo na palma das mãos.</p>
-                </div>
-            </article>
-            <article class="case"><img src="/img/projeto1.png" alt="Central de Dúvidas" loading="lazy">
-                <div class="case__body">
-                    <h3>Central de Dúvidas</h3>
-                    <p>Desenvolvido para assembleias virtuais, com chats individuais.</p>
-                </div>
-            </article>
-            <article class="case"><img src="/img/projeto3.png" alt="Calendário Institucional" loading="lazy">
-                <div class="case__body">
-                    <h3>Calendário Institucional</h3>
-                    <p>Calendário Institucional, programando avisos no: Outlook e Teams.</p>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- RESULTADOS -->
-    <section id="results">
-        <h2>Resultados em números</h2>
-        <p class="section-lead">Impacto direto na operação condominial.</p>
-        <div class="metrics-grid">
-            <div class="metric">
-                <div class="metric__value" data-target="70" data-suffix="%">0</div>
-                <div class="metric__label">Tempo de conferência a menos</div>
-            </div>
-            <div class="metric">
-                <div class="metric__value" data-target="90" data-suffix="%">0</div>
-                <div class="metric__label">Redução de falhas de envio</div>
-            </div>
-            <div class="metric">
-                <div class="metric__value" data-target="10000" data-suffix="+">0</div>
-                <div class="metric__label">Páginas PDF processadas/mês</div>
-            </div>
-            <div class="metric">
-                <div class="metric__value" data-target="24" data-suffix="/7">0</div>
-                <div class="metric__label">Esteiras monitoradas</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DEPOIMENTOS -->
-    <section id="testimonials">
-        <h2>Depoimentos</h2>
-        <div class="testimonials">
-            <blockquote class="quote">
-                <p>“Automação robusta e documentação impecável.”</p>
-                <footer>— Síndicos Profissionais</footer>
-            </blockquote>
-            <blockquote class="quote">
-                <p>“Integrações entregues com qualidade e zero enrolação.”</p>
-                <footer>— Gerentes de Condomínio</footer>
-            </blockquote>
-            <blockquote class="quote">
-                <p>“Consigo monitorar a infraestrutura de TI de qualquer lugar.”</p>
-                <footer>— Gestor de TI</footer>
-            </blockquote>
         </div>
     </section>
 
     <!-- PORTFÓLIO -->
     <section id="portfolio">
-        <h2>Portfólio</h2>
-        <div class="gallery">
-            <a href="https://duvidas.jaime.com.br/" target="_blank" rel="noreferrer">
-                <img src="/img/projeto1.png" alt="Projeto 1" loading="lazy">
-            </a>
-            <a href="https://consultas.jaime.com.br/" target="_blank" rel="noreferrer">
-                <img src="/img/projeto2.png" alt="Projeto 2" loading="lazy">
-            </a>
-            <a href="https://calendario.jaime.com.br/" target="_blank" rel="noreferrer">
-                <img src="/img/projeto3.png" alt="Projeto 3" loading="lazy">
-            </a>
+        <h2 data-i18n="port.title">Portfólio</h2>
+        <p class="section-lead" data-i18n="port.lead">Alguns projetos que construí com Java e Spring Boot.</p>
+        <div class="projects">
+            <article class="project">
+                <div class="project__media">
+                    <img src="/img/projeto1.png" alt="Central de Dúvidas" width="640" height="400" loading="lazy">
+                </div>
+                <div class="project__body">
+                    <h3>Central de Dúvidas</h3>
+                    <p data-i18n="port.p1">Plataforma de assembleias virtuais com chats individuais e fluxo de perguntas
+                        em tempo real.</p>
+                    <ul class="tags">
+                        <li>Java</li>
+                        <li>Spring Boot</li>
+                        <li>REST</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project__media">
+                    <img src="/img/projeto2.png" alt="Consultas" width="640" height="400" loading="lazy">
+                </div>
+                <div class="project__body">
+                    <h3>Consultas</h3>
+                    <p data-i18n="port.p2">Portal self-service que expõe consultas via API REST, com acesso rápido na
+                        palma da mão.</p>
+                    <ul class="tags">
+                        <li>Java</li>
+                        <li>Spring Boot</li>
+                        <li>JPA</li>
+                        <li>REST</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project__media">
+                    <img src="/img/projeto3.png" alt="Calendário Institucional" width="640" height="400"
+                        loading="lazy">
+                </div>
+                <div class="project__body">
+                    <h3>Calendário Institucional</h3>
+                    <p data-i18n="port.p3">Serviço de agendamento com integrações para Outlook e Teams via APIs.</p>
+                    <ul class="tags">
+                        <li>Java</li>
+                        <li>Spring Boot</li>
+                        <li data-i18n="tag.integr">Integrações</li>
+                        <li>REST</li>
+                    </ul>
+                </div>
+            </article>
         </div>
     </section>
 
     <!-- CONTATO -->
     <section id="contact">
-        <h2>Fale comigo</h2>
-        <form action="https://formspree.io/f/xwpkppba" method="post">
-            <input type="email" name="email" placeholder="Seu e-mail" required />
-            <button type="submit">Enviar por E-mail</button>
+        <h2 data-i18n="contact.title">Fale comigo</h2>
+        <form id="contact-form" action="https://formspree.io/f/xwpkppba" method="post">
+            <input type="email" name="email" placeholder="Seu e-mail" data-i18n-ph="contact.ph"
+                aria-label="Seu e-mail" required />
+            <button type="submit" data-i18n="contact.btn">Enviar por E-mail</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
         </form>
 
         <div class="contact-social">
-            <a class="btn-ghost" href="https://www.linkedin.com/in/eduardo-carolino-santos/" target="_blank"
+            <a class="social-btn social-btn--linkedin" href="https://www.linkedin.com/in/eduardo-carolino-santos/"
+                target="_blank" rel="noopener noreferrer">
+                <i class="devicon-linkedin-plain"></i><span>LinkedIn</span>
+            </a>
+            <a class="social-btn social-btn--whatsapp"
+                href="https://wa.me/5511996627759?text=Ol%C3%A1%2C%20Eduardo%21%20Vi%20seu%20portf%C3%B3lio%20de%20Engenheiro%20de%20Software%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade."
+                target="_blank" rel="noopener noreferrer">
+                <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20">
+                    <path
+                        d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg><span>WhatsApp</span>
+            </a>
+            <a class="social-btn social-btn--github" href="https://github.com/EduardoCarolinoSantos" target="_blank"
                 rel="noopener noreferrer">
-                <i class="devicon-linkedin-plain"></i> Conectar no LinkedIn
+                <i class="devicon-github-plain"></i><span>GitHub</span>
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
     <footer>
-        <small>© <span id="year"></span> Eduardo Carolino. Todos os direitos reservados.</small>
+        <small>© <span id="year"></span> Eduardo C. Santos · <span data-i18n="footer.role">Engenheiro de
+                Software</span>. <span data-i18n="footer.rights">Todos os direitos reservados.</span></small>
     </footer>
 
     <!-- Botão flutuante WhatsApp -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/5511996627759?text=Ol%C3%A1%20Eduardo%2C%20vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar."
+        <a href="https://wa.me/5511996627759?text=Ol%C3%A1%2C%20Eduardo%21%20Vi%20seu%20portf%C3%B3lio%20de%20Engenheiro%20de%20Software%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade."
             target="_blank" rel="noopener noreferrer" aria-label="Falar comigo no WhatsApp">
-            <img src="/img/whatsapp.png" alt="WhatsApp" />
+            <span class="whatsapp-float__label" data-i18n="wa.label">Fale comigo</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="30" height="30">
+                <path
+                    d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+            </svg>
         </a>
     </div>
 

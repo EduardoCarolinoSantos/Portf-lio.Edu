@@ -1,0 +1,8 @@
+services:
+  portfolio:
+    build: .
+    image: portfolio-eduardo:latest
+    container_name: portfolio-eduardo
+    ports:
+      - "8080:80"
+    restart: unless-stopped

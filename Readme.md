@@ -1,6 +1,6 @@
-# Portfólio — Eduardo Carolino
+# Portfólio — Eduardo C. Santos · Engenheiro de Software
 
-Site pessoal focado em **automação**, **integrações (SOAP/REST)**, **web** e **DevOps**, com visual **tech premium** e CTAs para contato direto via **WhatsApp** e **LinkedIn**.
+Site pessoal de um **Engenheiro de Software especialista em Java e Spring Boot**: **APIs REST**, **microsserviços** e **integrações (SOAP/REST)**, com visual **tech premium** e CTAs para contato direto via **WhatsApp** e **LinkedIn**.
 
 > **Demo local**: abra `index.html` no navegador ou sirva a pasta em um servidor estático ([ver instruções](#️-como-rodar-localmente)).
 
@@ -9,6 +9,7 @@ Site pessoal focado em **automação**, **integrações (SOAP/REST)**, **web** e
 ## ✨ Destaques
 
 - 🎨 **Design profissional**: dark theme, gradientes, glassmorphism, grid tecnológico e microinterações.
+- ☕ **Foco em Java**: grid de tecnologias centrado no ecossistema Java/Spring (Spring Boot, JPA/Hibernate, Maven, Gradle, JUnit) + infraestrutura de backend.
 - 📑 **Seções completas**: Sobre, Tecnologias (com logos), Qualidades, Serviços, Cases, Resultados, Depoimentos, Portfólio e Contato.
 - 📱 **Contato fácil**: botão **WhatsApp flutuante** fixo no canto inferior direito + LinkedIn.
 - 🌐 **SEO & Acessibilidade**: OG tags, responsivo, semântica básica e textos alternativos.
